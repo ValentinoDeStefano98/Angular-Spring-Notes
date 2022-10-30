@@ -9,12 +9,12 @@ import { LoginService } from '../login.service';
 })
 export class WelcomeComponent implements OnInit {
 
-  user!: any;
+  user!: User;
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
-    
+
   }
 
 

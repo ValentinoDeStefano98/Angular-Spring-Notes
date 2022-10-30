@@ -4,21 +4,22 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from './user';
 
-const baseUrl = "http://localhost:8080/user/login"
+ 
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {  
   http: any;
-  user!: User;
+  user!: User[];
+  baseUrl: string;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+    this.baseUrl = "http://localhost:8080/user/login"
+   }
 
   loginUser(user: User):Observable<object>{
-    return this.httpClient.post(`${baseUrl }`, user);
+    return this.httpClient.post(`${this.baseUrl }`, user);
   }
-
-
 
 }
