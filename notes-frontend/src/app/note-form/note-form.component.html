@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" routerLink="/home/:id">Note</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link text-white" routerLink="/login">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="d-flex justify-content-center">
+    <div class=" my-5 w-50">
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()" #noteForm="ngForm">
+                <div class="form-group text-center">
+                    <h3 class="text-white" for="nota">Inserisci la tua nota</h3>
+                    <input type="text" [(ngModel)]="note.title" class="form-control my-5" id="title" name="title"
+                    required #name="ngModel" placeholder="Titolo della nota">
+                    <input type="text" [(ngModel)]="note.note" class="form-control my-5" id="note" name="note" required #name="ngModel"
+                    placeholder="Inserisci la tua nota">
+                    <button type="submit" [disabled]="!noteForm.form.valid" class="btn btn-success">Salva</button>
+                </div>           
+            </form>
+        </div>
+    </div>
+</div>

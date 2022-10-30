@@ -1,0 +1,41 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" routerLink="/welcome">Note</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link text-white" routerLink="/login">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="d-flex flex-column align-items-center justify-content-center">
+    <div class="card my-5 w-50 ">
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titolo</th>
+                        <th scope="col">Descrizione</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let note of notes">
+                        <td>{{ note.id }}</td>
+                        <td>{{ note.title }}</td>
+                        <td>{{ note.note }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary mb-3" routerLink="/add-form">Aggiungi nota</button>
+    </div>
+</div>
+

@@ -1,0 +1,25 @@
+<div class="container col-md-6 d-flex flex-column align-items-center">
+    <h1 class="mb-5 mt-2">Registrati per accedere al servizio</h1>
+    <form (ngSubmit)="userRegister()">
+        <div class="d-flex flex-column align-items-center">       
+            <div class="mb-3 d-flex flex-column align-items-center">
+                <label for="exampleFormControlInput1" class="form-label">Nome utente</label>
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.name">
+            </div>
+
+            <div class="mb-3 d-flex flex-column align-items-center">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email">
+            </div>
+
+            <div class="mb-3 d-flex flex-column align-items-center">
+                <label for="exampleFormControlInput1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Registrati</button>
+            </div>
+            
+        </div>
+    </form>
+</div>
