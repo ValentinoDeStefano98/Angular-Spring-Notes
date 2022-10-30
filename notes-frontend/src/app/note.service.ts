@@ -8,6 +8,8 @@ import { Note } from './note';
 })
 export class NoteService {
 
+  note!: Note[];
+
   private baseUrl: string;
 
   constructor(private http: HttpClient) {
@@ -30,8 +32,8 @@ export class NoteService {
     return this.http.get<Note>(`${this.baseUrl}/${id}`);
   }
 
-  delete(id: any): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+  delete(id : any): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/${id}`);
   }
 
   deleteAll(): Observable<any> {

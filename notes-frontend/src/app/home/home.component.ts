@@ -25,4 +25,16 @@ export class HomeComponent implements OnInit {
     });
   }
 
+    deleteNote(id: number) {  
+    this.noteService.delete(id)  
+      .subscribe(  
+        data => {  
+          console.log(data);    
+          this.noteService.getAll().subscribe(data =>{  
+            this.notes =data  
+            })  
+        },  
+        error => console.log(error));  
+  }  
+
 }
